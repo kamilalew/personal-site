@@ -1,0 +1,160 @@
+$main-font: 'Barlow Condensed', sans-serif;
+$secondary-font: 'PT Sans Narrow', sans-serif;
+$red: rgb(220, 20, 60);
+
+
+.Red-background {
+    position: fixed;
+    background-color: $red;
+    height: 80vh;
+    width: 20vw;
+}
+
+.Heading {
+    // font-weight: 500;
+    font-size: 1.2rem;
+    color: black;
+    // z-index: 10;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5vw;
+    padding-top: 5vh;
+    transition: all 0.6s ease 0s;
+    animation:  slideFromTop 1s ease 0s 1 normal forwards running;
+    @keyframes slideFromTop {
+        0%, 80% {
+            transform: translateY(-20rem);
+        }
+        100% {
+            transform: translate(0)
+        }
+    }
+}
+
+.Name {
+    font-family: $main-font;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding-right: 3vw;
+}
+
+.Description {
+    font-family: $main-font;
+}
+
+.Middle-section-wrapper {
+    display: flex;
+    // padding-top: 20vh;
+    // align-items: center;
+    // justify-content: flex-start;
+}
+
+.Menu-wrapper {
+    display: flex;
+    align-items: center;
+    // margin-top: 50vh;
+    flex: 1;
+    .Menu-icon {
+        margin-left: 2vw;
+        padding-right: 1vw;
+        z-index: 0;
+        transition: transform 0.5s;
+    }
+    .Menu-icon:hover {
+       transform: rotate(90deg);
+    }
+    .Menu-icon:hover + .Menu {
+        transform: rotate(360deg);
+     }
+    .Menu {
+        transform: rotate(270deg);
+        transition: transform 0.5s;
+    }
+}
+
+.Hello-wrapper {
+    padding-top: 20vh;
+    height: 50vh;
+    flex: 2;
+    position: relative;
+    flex-direction: column;
+    font-size: 10vh;
+    .Square {
+        margin-top: 20vh;
+        position: absolute;
+        top: 18vh;
+        left: 10vh;
+        height: 10vh;
+        width: 10vh;
+        background-color: $red;
+        transform: rotate(0deg);
+        // animation-name: square-turn;
+        // animation-duration: 1s ease;
+        // animation-iteration-count: infinite;
+        // animation-fill-mode: forwards;
+        animation: 1.5s ease infinite 0s square-turn;
+        .Inside-square {
+            background-color: green;
+            height: 0vh;
+            width: 0vh;
+            // animation: 1.5s ease infinite 0s square-fill;
+        }
+
+    }
+    @keyframes square-turn {
+         0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(180deg);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        75% {
+            transform: rotate(1turn);
+        }
+        100% {
+            transform: rotate(1turn);
+        }
+    }
+
+    @keyframes square-fill {
+        0% {
+            height: 0vh;
+            width: 0vh;
+       }
+       25% {
+            height: 2.5vh;
+            width: 2.5vh;
+       }
+       50% {
+            height: 5vh;
+            width: 5vh;
+       }
+       75% {
+            height: 7.5vh;
+            width: 7.5vh;
+       }
+       100% {
+            height: 10vh;
+            width: 10vh;
+       }
+    }
+
+    .Hello-message {
+        padding-top: 20vh;
+        position: absolute;
+        text-transform: uppercase;
+        font-size: 20vh;
+        span {
+            color: $red;
+        }
+    }
+    .part-1 {
+        top: 0;
+    }
+    .part-2 {
+        top: 20vh;
+    }
+}
