@@ -1,29 +1,31 @@
 $main-font: 'Barlow Condensed', sans-serif;
 $secondary-font: 'PT Sans Narrow', sans-serif;
 $red: rgb(220, 20, 60);
+$gold: rgb(218, 165, 32);
 
 
-.Red-background {
+.gold-background {
     position: fixed;
-    background-color: $red;
-    height: 80vh;
-    width: 20vw;
+    background-color: $gold;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 0;
+    animation: 3s forwards red-background;
+    animation-timing-function: cubic-bezier(0.01, 1.57, 0.1, -0.17);
 }
 
-.Heading {
-    // font-weight: 500;
+.heading {
     font-size: 1.2rem;
     color: black;
-    // z-index: 10;
     display: flex;
     justify-content: flex-start;
     margin-left: 5vw;
     padding-top: 5vh;
     transition: all 0.6s ease 0s;
-    animation:  slideFromTop 1s ease 0s 1 normal forwards running;
+    animation:  slideFromTop 4s ease 0s 1 normal forwards running;
     @keyframes slideFromTop {
         0%, 80% {
-            transform: translateY(-20rem);
+            transform: translateY(-100rem);
         }
         100% {
             transform: translate(0)
@@ -31,122 +33,120 @@ $red: rgb(220, 20, 60);
     }
 }
 
-.Name {
+.name {
     font-family: $main-font;
     text-transform: uppercase;
     font-weight: 900;
     padding-right: 3vw;
 }
 
-.Description {
+.description {
     font-family: $main-font;
 }
 
-.Middle-section-wrapper {
+.middle-section-wrapper {
     display: flex;
-    // padding-top: 20vh;
-    // align-items: center;
-    // justify-content: flex-start;
 }
 
-.Menu-wrapper {
+.menu-wrapper {
     display: flex;
     align-items: center;
-    // margin-top: 50vh;
     flex: 1;
-    .Menu-icon {
+    .menu-icon {
         margin-left: 2vw;
         padding-right: 1vw;
         z-index: 0;
         transition: transform 0.5s;
     }
-    .Menu-icon:hover {
+    .menu-icon:hover {
        transform: rotate(90deg);
     }
-    .Menu-icon:hover + .Menu {
+    .menu-icon:hover + .Menu {
         transform: rotate(360deg);
      }
-    .Menu {
+    .menu {
         transform: rotate(270deg);
         transition: transform 0.5s;
     }
 }
 
-.Hello-wrapper {
+.hello-wrapper {
     padding-top: 20vh;
     height: 50vh;
     flex: 2;
     position: relative;
     flex-direction: column;
     font-size: 10vh;
-    .Square {
+    .square {
         margin-top: 20vh;
         position: absolute;
         top: 18vh;
         left: 10vh;
         height: 10vh;
         width: 10vh;
-        background-color: $red;
+        border: 3px solid white;
         transform: rotate(0deg);
-        // animation-name: square-turn;
-        // animation-duration: 1s ease;
-        // animation-iteration-count: infinite;
-        // animation-fill-mode: forwards;
-        animation: 1.5s ease infinite 0s square-turn;
-        .Inside-square {
-            background-color: green;
+        animation: 4s square-turn;
+        opacity: 0;
+        .inside-square {
+            background-color: white;
             height: 0vh;
-            width: 0vh;
-            // animation: 1.5s ease infinite 0s square-fill;
+            width: 10vh;
+            animation: 1s infinite square-fill;
         }
 
     }
     @keyframes square-turn {
          0% {
             transform: rotate(0deg);
+            opacity: 0;
+        }
+        1% {
+            opacity: 1;
         }
         25% {
-            transform: rotate(180deg);
+            transform: rotate(90deg);
         }
         50% {
             transform: rotate(180deg);
         }
         75% {
-            transform: rotate(1turn);
+            transform: rotate(270deg);
         }
         100% {
-            transform: rotate(1turn);
+            transform: rotate(360deg);
+            opacity: 0;
         }
     }
 
     @keyframes square-fill {
         0% {
             height: 0vh;
-            width: 0vh;
-       }
-       25% {
-            height: 2.5vh;
-            width: 2.5vh;
-       }
-       50% {
-            height: 5vh;
-            width: 5vh;
-       }
-       75% {
-            height: 7.5vh;
-            width: 7.5vh;
        }
        100% {
             height: 10vh;
-            width: 10vh;
        }
     }
 
-    .Hello-message {
+    @keyframes red-background {
+        0% {
+            width: 100vw;
+            height: 100vh;
+            margin: 0 0;
+        }
+        100% {
+            width: 40vw;
+            height: 80vh;
+            margin: 10vh 0 10vh 5vh;
+        }
+    }
+
+    .hello-message {
         padding-top: 20vh;
         position: absolute;
         text-transform: uppercase;
         font-size: 20vh;
+        animation: 3s slideFromTop;
         span {
             color: $red;
         }

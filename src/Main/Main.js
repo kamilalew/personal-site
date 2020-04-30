@@ -3,25 +3,25 @@ import './Main.scss'
 
 export default function Main() {
     return (
-        <div className='Main-wrapper'>
-            <div className='Heading'>
-                <div className='Name'>Kamila Lewicka</div>
-                <div className='Description'>Main page</div>
+        <div className='main-wrapper'>
+            <div className='gold-background'></div>
+            <div className='heading'>
+                <div className='name'>Kamila Lewicka</div>
+                <div className='description'>Main page</div>
             </div>
-            <div className='Middle-section-wrapper'>
-                <div className='Red-background'></div>
-                <div className='Menu-wrapper'>
-                    <div className='Menu-icon'>
+            <div className='middle-section-wrapper'>
+                <div className='menu-wrapper'>
+                    <div className='menu-icon'>
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/menu-rounded.png" alt='menu' />
                     </div>
-                    <div className='Menu'>Menu</div>
+                    <div className='menu'>Menu</div>
                 </div>
-                <div className='Hello-wrapper'>
-                    <div className='Square'>
-                        <div className='Inside-square'></div>
+                <div className='hello-wrapper'>
+                    <div className='square'>
+                        <div className='inside-square'></div>
                     </div>
-                    <div className='Hello-message part-1'>He</div>
-                    <div className='Hello-message part-2'>llo<span>.</span></div>
+                    <div className='hello-message part-1'>He</div>
+                    <div className='hello-message part-2'>llo<span>.</span></div>
                 </div>
             </div>
         </div>
